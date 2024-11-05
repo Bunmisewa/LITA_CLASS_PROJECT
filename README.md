@@ -14,8 +14,8 @@ Key insights addressed;
 ### Data Overview
 - Data Source:The primary source of data used here is Lita Capstone Datasets which was provided by the Incubator Hub, an organization that supplies educational datasets for learning and training purposes. The data was provided in an excel format, making it easy to analyze on the Excel Spreadsheets.
 - Tools: Microsft Excel [Download Here](https//:www.microsoft.com).
-- Data Range Monthly,Quarterly, Yearly
-- Key Metrics Revenue
+- Sql
+- Power Bi
 
   ### Data Cleaning:
 - Removed duplicate values,checked spelling errors, blank cells: About 40,099 duplicated values were removed and this includes blank spaces, duplicated figures.
