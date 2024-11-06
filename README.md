@@ -7,7 +7,7 @@
 
 [Data Transformation](#data-transformation)
 
-[Basic Statistics About the Dataset (#basic-statistics-about-the-dataset)
+[Basic stattistics about the dataset](#basic-statistics-about-the-dataset)
 
 
 ### Introduction
