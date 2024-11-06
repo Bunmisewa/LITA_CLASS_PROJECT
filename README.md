@@ -1,4 +1,15 @@
 # Retail Store Sales Performance Analysis
+[Introduction](#introduction)
+
+[Data Overview](#data-overview)
+
+[Data cleaning with excel](#data-cleaning-with-excel)
+
+[Data Transformation](#data-transformation)
+
+[Basic Statistics About the Dataset (#basic-statistics-about-the-dataset)
+
+
 ### Introduction
 #### This project presents the results of analyzing the sales performance of a retail store. Uncovering insights that can help with the growth of the organization and also addressing the less productive areas of the business.
 
