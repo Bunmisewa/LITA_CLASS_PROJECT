@@ -66,32 +66,32 @@ In this formula, "Shirt" was replaced with other products like Gloves, Hat, Sock
 SQL: Using Sql to analyze Retail Store Sales Performance
 
 This queries provides an analysis of sales data using SQL, Each query addresses each key insights above.
-
-Total sales for each product category
+```sql 
+---Total sales for each product category-
 ```sql 
 SELECT product, SUM(Total_sale) AS Total_sale
 FROM SalesData
-```sql
 GROUP BY product;
-Number of sales transactions in each region
+----Number of sales transactions in each region----
+```sql 
 SELECT region, COUNT(*) AS transaction_count
 FROM SalesData
 GROUP BY region;
 
-Highest-selling product by total sales value
+---Highest-selling product by total sales value---
 ```sql
 SELECT TOP 1 product, SUM(Total_sale) AS total_sales
 FROM SalesData
 GROUP BY product
 ORDER BY total_sales DESC;
 
-Total Revenue by 
+---Total Revenue by product ----
 ```sql
 SELECT product, SUM(Total_sale) AS total_revenue
 FROM SalesData
 GROUP BY product;
 
-Monthly sales totals for the current year
+-----Monthly sales-----
 ```sql
 SELECT MONTH(Orderdate) AS month,
 SUM(Total_sale) AS total_sales
@@ -100,14 +100,14 @@ WHERE YEAR(Orderdate) = 2024
 GROUP BY MONTH(Orderdate)
 ORDER BY MONTH(Orderdate);
 
-Top 5 customers by total purchase amount
+----Top 5 customers by total purchase---
 ```sql
 SELECT TOP 5 customer_id, SUM(Total_sale) AS total_purchase
 FROM SalesData
 GROUP BY customer_id
 ORDER BY total_purchase DESC;
 
-Percentage of total sales contributed by each region
+---Percentage of total sales by each region---
 ```sql
 SELECT region,
 SUM(Total_sale) AS total_sales,
@@ -115,7 +115,7 @@ SUM(Total_sale) AS total_sales,
 FROM SalesData
 GROUP BY region;
 
-Products with no sales in the last quarter
+----Products with no sales in a quarter--
 ```sql
 SELECT product 
 FROM SalesData
