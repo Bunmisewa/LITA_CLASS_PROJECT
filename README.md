@@ -54,14 +54,74 @@ In this formula, "Shirt" was replaced with other products like Gloves, Hat, Sock
 
 
 ### Basic statistics about the dataset:
-Total Sales: 2,101,090
 
-Total Quantity Sold: 68,461 items
+1. Total Sales: 2,101,090
 
-Number of Unique Customers: 9,921
+2. Total Quantity Sold: 68,461 items
 
-Number of Product Category: 6
+3. Number of Unique Customers: 9,921
 
+4. Number of Product Category: 6
+
+SQL: Using Sql to analyze Retail Store Sales Performance
+
+This queries provides an analysis of sales data using SQL, Each query addresses each key insights above.
+
+Total sales for each product category
+```sql 
+SELECT product, SUM(Total_sale) AS Total_sale
+FROM SalesData
+```sql
+GROUP BY product;
+Number of sales transactions in each region
+SELECT region, COUNT(*) AS transaction_count
+FROM SalesData
+GROUP BY region;
+
+Highest-selling product by total sales value
+```sql
+SELECT TOP 1 product, SUM(Total_sale) AS total_sales
+FROM SalesData
+GROUP BY product
+ORDER BY total_sales DESC;
+
+Total Revenue by 
+```sql
+SELECT product, SUM(Total_sale) AS total_revenue
+FROM SalesData
+GROUP BY product;
+
+Monthly sales totals for the current year
+```sql
+SELECT MONTH(Orderdate) AS month,
+SUM(Total_sale) AS total_sales
+FROM SalesData
+WHERE YEAR(Orderdate) = 2024
+GROUP BY MONTH(Orderdate)
+ORDER BY MONTH(Orderdate);
+
+Top 5 customers by total purchase amount
+```sql
+SELECT TOP 5 customer_id, SUM(Total_sale) AS total_purchase
+FROM SalesData
+GROUP BY customer_id
+ORDER BY total_purchase DESC;
+
+Percentage of total sales contributed by each region
+```sql
+SELECT region,
+SUM(Total_sale) AS total_sales,
+(SUM(Total_sale) / (SELECT SUM(Total_sale) FROM SalesData) * 100) AS percentage_of_total_sales
+FROM SalesData
+GROUP BY region;
+
+Products with no sales in the last quarter
+```sql
+SELECT product 
+FROM SalesData
+GROUP BY product
+HAVING SUM(CASE WHEN Orderdate BETWEEN '2024-06-01' AND '2024-08-31' THEN 1 ELSE 0 END) = 0;
+-- ========================== -- End of SQL Analysis -- ==========================
 
 
 
