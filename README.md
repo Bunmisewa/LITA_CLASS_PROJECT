@@ -11,9 +11,9 @@
 
 [Power BI Visualization](#power-bi-visualization)
 
-[INSIGHTS](insights)
-
 [SQL](sql)
+
+[INSIGHTS](insights)
 
 
 ### Introduction
